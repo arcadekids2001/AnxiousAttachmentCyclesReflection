@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import * as THREE from "three";
 import styles from "./three-card-nav.module.css";
@@ -239,7 +239,6 @@ export function ThreeCardNav() {
     const handlePointerLeave = () => {
       pointer.set(2, 2);
       hoveredRef.current = null;
-      setHoveredCard(null);
       canvas.style.cursor = "default";
     };
     const handlePointerDown = (event: PointerEvent) => {
