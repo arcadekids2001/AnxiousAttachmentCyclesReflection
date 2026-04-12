@@ -1,0 +1,115 @@
+.module {
+  display: grid;
+  gap: 18px;
+  padding: 24px;
+  border-radius: 32px;
+  background: rgba(8, 10, 16, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(26px);
+}
+
+.moduleHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.moduleHeader > div:first-child {
+  min-width: 0;
+}
+
+.sectionLabel {
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.moduleHeader h3 {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.intro,
+.timerText,
+.card span {
+  color: rgba(255, 255, 255, 0.64);
+  line-height: 1.7;
+}
+
+.closeButton {
+  border: none;
+  cursor: pointer;
+  padding: 11px 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.card,
+.timerButton {
+  padding: 18px;
+  border-radius: 24px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.card strong {
+  display: block;
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.card span {
+  display: block;
+  margin-top: 8px;
+}
+
+.cardActive {
+  background: linear-gradient(180deg, rgba(109, 145, 255, 0.22), rgba(255, 255, 255, 0.08));
+  border-color: rgba(166, 188, 255, 0.24);
+}
+
+.timerRow {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.timerButton {
+  padding: 12px 14px;
+}
+
+.timerBar {
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.timerProgress {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #7c97ff, #9bd0ff);
+}
+
+@media (max-width: 820px) {
+  .module {
+    padding: 18px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

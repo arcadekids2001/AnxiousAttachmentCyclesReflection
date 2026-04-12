@@ -1,0 +1,161 @@
+{
+  "sessions": [
+    {
+      "id": "63c71ad6-d1d5-4c5c-89cb-2e88ce9304e7",
+      "title": "帮我分清事实、感受和脑补",
+      "createdAt": "2026-04-12T01:02:12.676Z",
+      "updatedAt": "2026-04-12T01:59:50.559Z",
+      "messages": [
+        {
+          "id": "ef3dc653-0bc9-4bb4-9259-e5abc629afea",
+          "role": "assistant",
+          "content": "Welcome. You can describe a recent relational trigger, and AURA will help organize it into what happened, what you felt, what fear may have been activated, and what a steadier next step could be.",
+          "createdAt": "2026-04-12T01:02:12.676Z"
+        },
+        {
+          "id": "8f7e9b33-9efc-4140-9e57-01490c85aa8c",
+          "role": "user",
+          "content": "帮我分清事实、感受和脑补",
+          "createdAt": "2026-04-12T01:59:48.791Z"
+        },
+        {
+          "id": "d9b793a5-b846-49ef-b75f-07de5c44fd55",
+          "role": "assistant",
+          "content": "你好。很高兴能帮助你理清事实、感受和脑补。\n\n要做到这一点，最有效的方式是针对一个具体的经历来讨论。\n\n你可以描述一个最近让你在关系中感到不安或触发的场景吗？我们会一起把它拆解开来。",
+          "createdAt": "2026-04-12T01:59:50.558Z"
+        }
+      ]
+    },
+    {
+      "id": "2f8467dc-a843-4350-9cf8-3fafd97af24d",
+      "title": "My partner replied late and I feel panicked.",
+      "createdAt": "2026-04-11T19:23:59.155Z",
+      "updatedAt": "2026-04-11T19:47:50.908Z",
+      "messages": [
+        {
+          "id": "87d9d195-6922-4f73-a9a9-ecbec9ea77e7",
+          "role": "assistant",
+          "content": "Welcome. You can describe a recent relational trigger, and AURA will help organize it into what happened, what you felt, what fear may have been activated, and what a steadier next step could be.",
+          "createdAt": "2026-04-11T19:23:59.155Z"
+        },
+        {
+          "id": "03c95c89-0a88-400f-9aa1-eee8098f196e",
+          "role": "user",
+          "content": "My partner replied late and I feel panicked.",
+          "createdAt": "2026-04-11T19:25:35.553Z"
+        },
+        {
+          "id": "ec55c944-8e04-4769-82de-8a14c55c8863",
+          "role": "assistant",
+          "content": "Your current OpenAI quota is unavailable, so AURA is responding in local fallback mode.\n\nCurrent support mode: relationship_trigger_reflection.\n\nWhat seems to have happened: a shift in communication pace that felt unsettling.\nWhat you may be feeling: panic and urgency.\nWhat fear may be underneath it: fear that the relationship may be becoming less secure.\n\nA steadier next step could be to pause before reacting, name two alternative explanations, and choose one grounded action that protects your dignity and calm.\n\nReflection prompt: What evidence supports your fear, and what evidence suggests a less threatening explanation?",
+          "createdAt": "2026-04-11T19:25:36.010Z"
+        },
+        {
+          "id": "09cca31a-a1c2-4cc8-9db2-6b067c4ca25e",
+          "role": "user",
+          "content": "Help me reflect on feeling anxious when my partner replies slowly.",
+          "createdAt": "2026-04-11T19:32:18.902Z"
+        },
+        {
+          "id": "a94e80c5-ab77-4281-a9e5-d950ff313ca5",
+          "role": "assistant",
+          "content": "Thank you for sharing this. It's a very common and understandable trigger when working on anxious attachment.\n\nLet's break it down together.\n\n1.  **What happened (the event)?**\n    Your partner replied later than you expected or desired. Can you describe just the factual observation, without interpretation? For example, \"My partner replied [X minutes/hours] after my last message.\"",
+          "createdAt": "2026-04-11T19:32:21.303Z"
+        },
+        {
+          "id": "b130ccc3-9273-43b2-af72-852a73aa133a",
+          "role": "user",
+          "content": "你好我最近男朋友总不回我消息，我很焦虑，躯体化了",
+          "createdAt": "2026-04-11T19:38:32.714Z"
+        },
+        {
+          "id": "6d2d0b13-2884-442f-a46e-7af128829e13",
+          "role": "assistant",
+          "content": "你好。我听到你最近男朋友不回复消息让你感到非常焦虑，甚至出现了身体上的不适（躯体化）。这是一种很强烈的体验，谢谢你分享。\n\n让我们一起慢慢梳理一下好吗？\n\n1.  **具体发生了什么（事件）？**\n    你能不能只描述一下事实，不带任何猜测或感受？\n    例如：\"他最后一次回复是X小时/天前。\" 或者 \"我给他发了X条消息，但他都没回。\"",
+          "createdAt": "2026-04-11T19:38:37.937Z"
+        },
+        {
+          "id": "a4c0c927-544a-484c-9108-509d45b50be3",
+          "role": "user",
+          "content": "额不知道",
+          "createdAt": "2026-04-11T19:39:09.666Z"
+        },
+        {
+          "id": "184a9039-2d51-4315-b715-b97f80553e14",
+          "role": "assistant",
+          "content": "没关系，不知道也没关系。有时候思绪很乱的时候，很难一下子理清。\n\n我们可以从感受开始。你提到感到很焦虑，甚至身体不适。\n\n你现在身体上有什么具体的感觉吗？是心跳加速、呼吸急促、胃部不适，还是其他什么感觉？感受一下，并试着描述出来。",
+          "createdAt": "2026-04-11T19:39:10.843Z"
+        },
+        {
+          "id": "da4783e6-a559-430c-85cc-0318567e7a59",
+          "role": "user",
+          "content": "我想写一段冷静一点的回应",
+          "createdAt": "2026-04-11T19:42:24.313Z"
+        },
+        {
+          "id": "51517ee0-83c4-4a77-909b-6d1f674be571",
+          "role": "assistant",
+          "content": "好的，我理解你现在很焦虑，但希望能找到一个冷静的方式来回应你的男朋友。这是一个很有力量的意愿，也是一个很好的方向。\n\n在我们可以写出这段冷静回应之前，让我们先花一点时间来帮助你找回一些内在的平静。\n\n我们先暂停一下对外在的回应，转向你内在的感受。你现在身体上有什么具体的感觉吗？试着不带评判地去感受它，就像一个观察者一样。\n\n比如，你现在心跳快吗？呼吸怎么样？胃里感觉如何？肩颈是紧绷的吗？\n\n我们先感受和识别一下这些身体信号，这能帮助我们先把自己“拉回来”一点点。",
+          "createdAt": "2026-04-11T19:42:25.874Z"
+        },
+        {
+          "id": "9f71de9d-ee80-4f22-95e7-ec2ba44590ba",
+          "role": "user",
+          "content": "带我进入森林空间，我想先平静下来。",
+          "createdAt": "2026-04-11T19:47:47.390Z"
+        },
+        {
+          "id": "e734b4ca-e62b-4ea5-96f4-8b70f9daf738",
+          "role": "assistant",
+          "content": "好的，我能感受到你对平静的渴望。现在，让我们一起想象进入一个能让你感到安全和宁静的森林空间。\n\n请你找一个舒服的姿势坐着或躺着，如果你愿意，可以轻轻闭上眼睛。\n\n想象你正站在一片古老而宁静的森林边缘。\n\n阳光透过茂密的树冠，洒下斑驳的光影，温暖而柔和。空气中弥漫着泥土的芬芳和淡淡的植物清香。\n\n你深吸一口气，感受到这清新的空气充满你的肺部，然后缓缓呼出。\n再吸气，感受平静进入身体；呼气，释放一些紧张。\n\n你向前迈出一步，走入这片森林。脚下是柔软的苔藓和落叶，每一步都轻柔而有弹性。\n周围是高大的树木，它们默默地矗立着，像守护者一样，带来一种安稳的感觉。\n\n听，你听到什么了吗？也许是微风轻拂过树叶的沙沙声，或是远处鸟儿婉转的歌唱。这些声音都轻柔而遥远，不会打扰你的宁静。\n\n你继续向前走，来到一处阳光充足的林间空地。地上开满了各色的小花，蝴蝶在花丛中翩翩起舞。\n\n在这里，你可以感受到一切都是如此和谐、平衡。\n\n你找到一块被阳光晒得暖暖的石头，或者一张由大树根构成的天然座椅，坐了下来。\n感受你的身体与地面或座椅的连接，让身体的重量被大地温柔地承托。\n\n允许任何紧绷和焦虑，在你的呼吸中，随着呼气慢慢融化、消散。\n你在这里是安全的，被大自然温柔地环绕着。\n这个空间只属于你，充满了平静与安宁。\n\n当你准备好时，可以慢慢地将注意力带回到你的呼吸上，再慢慢睁开眼睛。\n你现在感觉如何？有没有一丝平静？",
+          "createdAt": "2026-04-11T19:47:50.907Z"
+        }
+      ]
+    },
+    {
+      "id": "d237f324-ee2e-4d9b-8eea-d7856180a3cb",
+      "title": "Reflection Apr 11, 03:23 PM",
+      "createdAt": "2026-04-11T19:23:57.202Z",
+      "updatedAt": "2026-04-11T19:23:57.202Z",
+      "messages": [
+        {
+          "id": "573da36b-61a0-40ef-854b-1e47fe5e9d55",
+          "role": "assistant",
+          "content": "Welcome. You can describe a recent relational trigger, and AURA will help organize it into what happened, what you felt, what fear may have been activated, and what a steadier next step could be.",
+          "createdAt": "2026-04-11T19:23:57.202Z"
+        }
+      ]
+    },
+    {
+      "id": "627c114f-c284-4c8f-9903-b7c94d1fc2fe",
+      "title": "Reflection Apr 11, 03:19 PM",
+      "createdAt": "2026-04-11T19:19:04.103Z",
+      "updatedAt": "2026-04-11T19:19:04.103Z",
+      "messages": [
+        {
+          "id": "1329255b-3ae3-424a-bc82-39e656fb1424",
+          "role": "assistant",
+          "content": "Welcome. You can describe a recent relational trigger, and AURA will help organize it into what happened, what you felt, what fear may have been activated, and what a steadier next step could be.",
+          "createdAt": "2026-04-11T19:19:04.103Z"
+        }
+      ]
+    }
+  ],
+  "journal": [
+    {
+      "id": "a0b70327-b52b-4e54-bf5f-4bab60d9ab22",
+      "entry": "呜呜",
+      "createdAt": "2026-04-12T02:22:26.225Z"
+    },
+    {
+      "id": "f89c66f2-80f1-462b-86dc-cf35eabdea0b",
+      "entry": "难受想哭",
+      "createdAt": "2026-04-12T02:22:17.845Z"
+    },
+    {
+      "id": "27f93228-8dfe-40d0-b863-55bc778a10ce",
+      "entry": "我躯体化了",
+      "createdAt": "2026-04-11T21:23:39.169Z"
+    }
+  ]
+}

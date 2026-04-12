@@ -1,0 +1,101 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.filters {
+  position: absolute;
+}
+
+.skyGlow,
+.haze {
+  position: absolute;
+  inset: -12%;
+}
+
+.skyGlow {
+  background:
+    radial-gradient(circle at 18% 16%, rgba(99, 139, 255, 0.12), transparent 24%),
+    radial-gradient(circle at 78% 24%, rgba(165, 198, 255, 0.09), transparent 22%),
+    radial-gradient(circle at 52% 82%, rgba(103, 130, 214, 0.08), transparent 28%);
+  filter: blur(46px);
+  opacity: 0.9;
+}
+
+.haze {
+  background:
+    linear-gradient(180deg, rgba(11, 15, 27, 0) 0%, rgba(7, 10, 18, 0.32) 42%, rgba(5, 8, 15, 0.64) 100%),
+    radial-gradient(circle at center, rgba(152, 180, 255, 0.04), transparent 52%);
+}
+
+.cloud {
+  position: absolute;
+  top: var(--cloud-top);
+  left: var(--cloud-left);
+  width: var(--cloud-width);
+  height: var(--cloud-height);
+  opacity: var(--cloud-opacity);
+  filter: url(#aura-cloud-distort) blur(16px);
+  animation: drift var(--cloud-duration) ease-in-out infinite;
+  animation-delay: var(--cloud-delay);
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+.cloudCore,
+.cloudLobeOne,
+.cloudLobeTwo,
+.cloudMist {
+  position: absolute;
+  display: block;
+  background: radial-gradient(circle at 50% 50%, rgba(196, 222, 255, 0.38), rgba(110, 142, 216, 0.06) 72%, transparent 100%);
+  border-radius: 999px;
+}
+
+.cloudCore {
+  inset: 20% 10% 18% 8%;
+}
+
+.cloudLobeOne {
+  width: 42%;
+  height: 52%;
+  top: 6%;
+  left: 10%;
+}
+
+.cloudLobeTwo {
+  width: 38%;
+  height: 48%;
+  top: 12%;
+  right: 12%;
+}
+
+.cloudMist {
+  inset: 38% 2% 2%;
+  background: radial-gradient(circle at 50% 0%, rgba(176, 205, 255, 0.16), transparent 72%);
+  filter: blur(12px);
+}
+
+@keyframes drift {
+  0% {
+    transform: translate3d(calc(var(--cloud-drift-x) * -0.5), calc(var(--cloud-drift-y) * -0.35), 0) scale(0.98);
+  }
+
+  50% {
+    transform: translate3d(var(--cloud-drift-x), var(--cloud-drift-y), 0) scale(1.04);
+  }
+
+  100% {
+    transform: translate3d(calc(var(--cloud-drift-x) * -0.5), calc(var(--cloud-drift-y) * -0.35), 0) scale(0.98);
+  }
+}
+
+@media (max-width: 980px) {
+  .cloud {
+    transform-origin: center;
+    scale: 0.72;
+  }
+}

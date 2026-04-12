@@ -1,0 +1,28 @@
+{
+  "name": "aura-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "next": "16.2.3",
+    "pdf-parse": "^2.4.5",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "three": "^0.183.2",
+    "webgl-fluid": "^0.3.9"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/three": "^0.183.1",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.3",
+    "typescript": "^5"
+  }
+}
