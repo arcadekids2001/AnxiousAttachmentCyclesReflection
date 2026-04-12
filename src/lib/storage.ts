@@ -9,13 +9,42 @@ const storePath = path.join(dataDirectory, "aura-store.json");
 const defaultAssistantMessage =
   "Welcome. You can describe a recent relational trigger, and AURA will help organize it into what happened, what you felt, what fear may have been activated, and what a steadier next step could be.";
 
+declare global {
+  // eslint-disable-next-line no-var
+  var __auraMemoryStore__: AuraStore | undefined;
+}
+
+function isVercelRuntime() {
+  return process.env.VERCEL === "1";
+}
+
+function getMemoryStore() {
+  if (!globalThis.__auraMemoryStore__) {
+    globalThis.__auraMemoryStore__ = {
+      sessions: [],
+      journal: [],
+    };
+  }
+
+  return globalThis.__auraMemoryStore__;
+}
+
 export async function readStore(): Promise<AuraStore> {
+  if (isVercelRuntime()) {
+    return structuredClone(getMemoryStore());
+  }
+
   await ensureStore();
   const raw = await readFile(storePath, "utf8");
   return JSON.parse(raw) as AuraStore;
 }
 
 export async function writeStore(store: AuraStore) {
+  if (isVercelRuntime()) {
+    globalThis.__auraMemoryStore__ = structuredClone(store);
+    return;
+  }
+
   await ensureStore();
   await writeFile(storePath, JSON.stringify(store, null, 2), "utf8");
 }
