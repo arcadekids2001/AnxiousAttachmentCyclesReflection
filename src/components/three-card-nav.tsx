@@ -153,9 +153,7 @@ function drawRoundedRect(
 export function ThreeCardNav() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const frameRef = useRef<HTMLDivElement | null>(null);
-  const labelRef = useRef<HTMLDivElement | null>(null);
   const hoveredRef = useRef<number | null>(null);
-  const [hoveredCard, setHoveredCard] = useState<NavCard | null>(null);
   const pathname = usePathname();
   const router = useRouter();
   const isHome = pathname === "/";
@@ -272,7 +270,6 @@ export function ThreeCardNav() {
 
       if (hoveredRef.current !== nextHoveredIndex) {
         hoveredRef.current = nextHoveredIndex;
-        setHoveredCard(nextHoveredIndex !== null && nextHoveredIndex >= 0 ? cards[nextHoveredIndex].data : null);
         canvas.style.cursor = nextHoveredIndex !== null && nextHoveredIndex >= 0 ? "pointer" : "default";
       }
 
@@ -310,23 +307,6 @@ export function ThreeCardNav() {
         entry.group.scale.setScalar(scale);
       });
 
-      const labelCard =
-        hoveredRef.current !== null && hoveredRef.current >= 0 ? cards[hoveredRef.current] : cards[activeIndex];
-
-      if (labelRef.current) {
-        if (isHome && hoveredRef.current === null) {
-          labelRef.current.style.opacity = "0";
-        } else {
-          const screenPosition = labelCard.group.position.clone();
-          screenPosition.y += 1.76;
-          screenPosition.project(camera);
-          const x = ((screenPosition.x + 1) / 2) * canvas.clientWidth;
-          const y = ((-screenPosition.y + 1) / 2) * canvas.clientHeight;
-          labelRef.current.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
-          labelRef.current.style.opacity = hoveredRef.current !== null ? "1" : "0.92";
-        }
-      }
-
       renderer.render(scene, camera);
     };
 
@@ -359,13 +339,6 @@ export function ThreeCardNav() {
   return (
     <div className={styles.stage} ref={frameRef}>
       <canvas ref={canvasRef} className={styles.canvas} />
-      <div
-        ref={labelRef}
-        className={styles.label}
-        style={{ opacity: isHome ? 0 : hoveredCard ? 1 : 0.92 }}
-      >
-        {hoveredCard?.title.replace("\n", " ") ?? navCards[activeIndex].title.replace("\n", " ")}
-      </div>
       <div className={styles.hint}>Move across the scene and click a card to switch pages.</div>
     </div>
   );
