@@ -366,7 +366,7 @@ export function ThreeCardNav() {
       >
         {hoveredCard?.title.replace("\n", " ") ?? navCards[activeIndex].title.replace("\n", " ")}
       </div>
-      <div className={styles.hint}>拖动鼠标观察空间层次，点击卡片切换页面</div>
+      <div className={styles.hint}>Move across the scene and click a card to switch pages.</div>
     </div>
   );
 }

@@ -1,59 +1,90 @@
 # AURA Web
 
-A production-oriented Next.js foundation for:
+AURA Web is a Next.js experience for:
 
-- anxious attachment reflection support
-- AI-assisted intervention dialogue
-- server-side conversation recording
-- journal entry persistence
-- future skill-based agent orchestration
+- AI-supported relationship reflection
+- anxious attachment intervention flows
+- journaling
+- music and sandbox calming spaces
+- a polished 3D-first interface for guided support
 
 ## Stack
 
 - Next.js App Router
 - TypeScript
-- server-side Gemini API calls
-- local JSON persistence for MVP storage
+- Gemini API on the server
+- Three.js
+- webgl-fluid
 
-## Setup
+## Environment Variables
 
-1. Copy `.env.example` to `.env.local`
-2. Set `GEMINI_API_KEY`
-3. Optionally change `GEMINI_MODEL`
-
-Example:
+Create `.env.local` for local development:
 
 ```bash
 GEMINI_API_KEY=your_key_here
 GEMINI_MODEL=gemini-2.5-flash
 ```
 
-## Run
+For Vercel, add the same variables in the project settings:
+
+- `GEMINI_API_KEY`
+- `GEMINI_MODEL`
+
+## Local Development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the dev server:
 
 ```bash
 npm run dev
 ```
 
-Then open:
+Open:
 
 `http://localhost:3000`
 
-## Current MVP behavior
+## Scripts
 
-- conversations are stored in `data/aura-store.json`
-- journal entries are stored in the same file
-- chat requests go through `/api/chat`
-- sessions load through `/api/sessions`
-- journal saves through `/api/journal`
+```bash
+npm run dev
+npm run build
+npm run start
+npm run lint
+```
 
-## Important note
+## Deploy To Vercel
 
-This version is much safer than a pure browser-only demo because the API key stays on the server, but it is still an MVP.
+1. Push this repository to GitHub.
+2. Import the repo into Vercel.
+3. Add:
+   - `GEMINI_API_KEY`
+   - `GEMINI_MODEL`
+4. Deploy.
 
-For the next step, I recommend adding:
+## Storage Behavior
 
-- PostgreSQL + Prisma
-- user accounts
-- structured profile memory
-- safety escalation logic
-- richer skill registry and orchestration
+This project currently uses two storage modes:
+
+- Local development: reads and writes `data/aura-store.json`
+- Vercel deployment: uses in-memory fallback storage
+
+That means production AI chat works on Vercel, but conversation history and journal data are not guaranteed to persist across instance restarts or redeploys.
+
+## Current API Routes
+
+- `/api/chat`
+- `/api/sessions`
+- `/api/journal`
+
+## Recommended Next Step
+
+If you want durable production storage, replace the current fallback with a real external store such as:
+
+- Vercel Postgres
+- Supabase
+- Prisma + PostgreSQL

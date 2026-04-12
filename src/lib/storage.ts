@@ -10,7 +10,6 @@ const defaultAssistantMessage =
   "Welcome. You can describe a recent relational trigger, and AURA will help organize it into what happened, what you felt, what fear may have been activated, and what a steadier next step could be.";
 
 declare global {
-  // eslint-disable-next-line no-var
   var __auraMemoryStore__: AuraStore | undefined;
 }
 

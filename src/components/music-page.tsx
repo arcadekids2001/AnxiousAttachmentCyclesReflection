@@ -8,10 +8,10 @@ import styles from "./music-page.module.css";
 type SoundMode = "ocean" | "rain" | "forest" | "cosmic" | null;
 
 const soundModes = [
-  { id: "ocean", title: "Ocean Space", desc: "更像缓慢、宽阔，能让身体降下来。" },
-  { id: "rain", title: "Rain Space", desc: "适合脑子很满、需要一点包裹感的时候。" },
-  { id: "forest", title: "Forest Space", desc: "比较稳定、均匀，适合重新找回呼吸。" },
-  { id: "cosmic", title: "Cosmic Space", desc: "更空、更远，适合把注意力从关系拉回来。" },
+  { id: "ocean", title: "Ocean Space", desc: "Slow and wide, for helping the body settle down." },
+  { id: "rain", title: "Rain Space", desc: "Good for a crowded mind that needs a little containment." },
+  { id: "forest", title: "Forest Space", desc: "Steady and even, for finding your breath again." },
+  { id: "cosmic", title: "Cosmic Space", desc: "More distant and spacious, for pulling attention back to yourself." },
 ] as const;
 
 export function MusicPage() {
@@ -140,23 +140,24 @@ export function MusicPage() {
   return (
     <WorkspaceShell
       title="Music Space"
-      subtitle="先让身体慢一点，再回去处理关系里的不确定。"
-      status={activeMode ? `正在播放 ${activeMode}` : "已就绪"}
+      subtitle="Slow the body down first, then return to the uncertainty with more room."
+      status={activeMode ? `Playing ${activeMode}` : "Ready"}
       frameless
     >
       <section className={styles.module}>
         <div className={styles.moduleHeader}>
           <div>
             <p className={styles.sectionLabel}>Soundscape</p>
-            <h3>这里不是功能页，而是一个让你先稳定下来的空间。</h3>
+            <h3>This is not a utility page. It is a space to let yourself settle first.</h3>
           </div>
           <button className={styles.closeButton} type="button" onClick={() => router.push("/")}>
-            关闭
+            Close
           </button>
         </div>
 
         <p className={styles.intro}>
-          你不一定每次都需要先说出来。有时候更有用的是先给自己几分钟，让身体从紧绷里退一点出来。
+          You do not always have to speak first. Sometimes the more useful move is to give yourself a few minutes and let
+          the body step back from the tension.
         </p>
 
         <div className={styles.grid}>
@@ -176,7 +177,7 @@ export function MusicPage() {
         <div className={styles.timerRow}>
           {[5, 10, 15].map((minute) => (
             <button key={minute} type="button" className={styles.timerButton} onClick={() => startTimer(minute)}>
-              {minute} 分钟
+              {minute} min
             </button>
           ))}
         </div>
@@ -184,7 +185,7 @@ export function MusicPage() {
         <div className={styles.timerBar}>
           <div className={styles.timerProgress} style={{ width: `${progress}%` }} />
         </div>
-        <p className={styles.timerText}>{remainingSeconds > 0 ? `剩余 ${formattedRemaining}` : "未开启计时器"}</p>
+        <p className={styles.timerText}>{remainingSeconds > 0 ? `Remaining ${formattedRemaining}` : "Timer off"}</p>
       </section>
     </WorkspaceShell>
   );

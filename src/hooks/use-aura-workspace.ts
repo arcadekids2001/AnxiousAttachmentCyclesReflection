@@ -14,7 +14,7 @@ export function useAuraWorkspace() {
   const [selectedSessionId, setSelectedSessionId] = useState("");
   const [loading, setLoading] = useState(true);
   const [thinking, setThinking] = useState(false);
-  const [status, setStatus] = useState("正在连接");
+  const [status, setStatus] = useState("Connecting");
 
   useEffect(() => {
     void loadWorkspace();
@@ -29,9 +29,9 @@ export function useAuraWorkspace() {
       setSessions(data.sessions);
       setJournal(data.journal);
       setSelectedSessionId(data.sessions[0]?.id ?? "");
-      setStatus("已就绪");
+      setStatus("Ready");
     } catch {
-      setStatus("加载失败");
+      setStatus("Load failed");
     } finally {
       setLoading(false);
     }
@@ -45,10 +45,10 @@ export function useAuraWorkspace() {
       const data = (await response.json()) as { session: AuraSession };
       setSessions((current) => [data.session, ...current]);
       setSelectedSessionId(data.session.id);
-      setStatus("已创建新对话");
+      setStatus("New session created");
       return data.session;
     } catch {
-      setStatus("新建失败");
+      setStatus("Create failed");
       return null;
     } finally {
       setThinking(false);
@@ -63,7 +63,7 @@ export function useAuraWorkspace() {
     }
 
     setThinking(true);
-    setStatus("正在思考");
+    setStatus("Thinking");
 
     try {
       const response = await fetch("/api/chat", {
@@ -87,15 +87,13 @@ export function useAuraWorkspace() {
       }
 
       setSessions((current) =>
-        current.map((session) =>
-          session.id === data.session?.id ? data.session : session,
-        ),
+        current.map((session) => (session.id === data.session?.id ? data.session : session)),
       );
       setSelectedSessionId(data.session.id);
-      setStatus("已保存");
+      setStatus("Saved");
       return true;
     } catch (error) {
-      setStatus(error instanceof Error ? error.message : "发送失败");
+      setStatus(error instanceof Error ? error.message : "Send failed");
       return false;
     } finally {
       setThinking(false);
@@ -119,16 +117,15 @@ export function useAuraWorkspace() {
       });
       const data = (await response.json()) as { entry: AuraJournalEntry };
       setJournal((current) => [data.entry, ...current]);
-      setStatus("已记录");
+      setStatus("Recorded");
       return true;
     } catch {
-      setStatus("记录失败");
+      setStatus("Save failed");
       return false;
     }
   }
 
-  const selectedSession =
-    sessions.find((session) => session.id === selectedSessionId) ?? sessions[0];
+  const selectedSession = sessions.find((session) => session.id === selectedSessionId) ?? sessions[0];
 
   return {
     sessions,

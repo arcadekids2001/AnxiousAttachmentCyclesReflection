@@ -21,7 +21,7 @@ export function JournalPage() {
   return (
     <WorkspaceShell
       title="Journal"
-      subtitle="把情绪、想法和下次想尝试的不同反应慢慢写下来。"
+      subtitle="Write down the emotion, the thought, and the different response you want to try next time."
       status={status}
       frameless
     >
@@ -29,32 +29,35 @@ export function JournalPage() {
         <div className={styles.moduleHeader}>
           <div>
             <p className={styles.sectionLabel}>Emotional Journal</p>
-            <h3>写下这次发生了什么，以及你想怎样对自己更温柔一点。</h3>
+            <h3>Write down what happened, and how you want to be gentler with yourself.</h3>
           </div>
           <button className={styles.closeButton} type="button" onClick={() => router.push("/")}>
-            关闭
+            Close
           </button>
         </div>
 
-        <p className={styles.intro}>这里适合记录事件、第一反应、身体感觉，还有下一次你希望自己多停一秒的地方。</p>
+        <p className={styles.intro}>
+          This space is for the event, the first reaction, the body sensation, and the place where you want to pause a
+          little longer next time.
+        </p>
 
         <textarea
           className={styles.textArea}
           value={draft}
           onChange={(event) => setDraft(event.target.value)}
-          placeholder="例如：当我看到对方很久没回，我马上开始胸口发紧，想连续发消息。下次我想先等 10 分钟。"
+          placeholder="Example: When I saw they had not replied for a long time, my chest tightened and I wanted to send several messages in a row. Next time I want to wait 10 minutes first."
         />
 
         <div className={styles.toolbar}>
-          <p>写得不需要完整，只要真实。</p>
+          <p>It does not need to be complete. It just needs to be honest.</p>
           <button className={styles.primaryButton} type="button" onClick={handleSave}>
-            保存记录
+            Save Entry
           </button>
         </div>
 
         <div className={styles.historyHeader}>
           <p className={styles.sectionLabel}>History</p>
-          <h4>最近的记录</h4>
+          <h4>Recent Entries</h4>
         </div>
 
         <div className={styles.grid}>
@@ -71,7 +74,7 @@ export function JournalPage() {
 }
 
 function formatDate(value: string) {
-  return new Intl.DateTimeFormat("zh-CN", {
+  return new Intl.DateTimeFormat("en-US", {
     month: "numeric",
     day: "numeric",
     hour: "2-digit",
