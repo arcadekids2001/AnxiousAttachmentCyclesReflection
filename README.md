@@ -89,6 +89,3 @@ Use [supabase-schema.sql](C:\Users\zyuan\OneDrive\Documents\New%20project\aura-w
 - `/api/sessions`
 - `/api/journal`
 
-## Recommended Next Step
-
-If you want to go further, the next step is adding auth and row-level policies on top of the current Supabase tables.
