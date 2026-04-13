@@ -24,12 +24,16 @@ Create `.env.local` for local development:
 ```bash
 GEMINI_API_KEY=your_key_here
 GEMINI_MODEL=gemini-2.5-flash
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_publishable_key
 ```
 
 For Vercel, add the same variables in the project settings:
 
 - `GEMINI_API_KEY`
 - `GEMINI_MODEL`
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 
 ## Local Development
 
@@ -69,12 +73,15 @@ npm run lint
 
 ## Storage Behavior
 
-This project currently uses two storage modes:
+This project now supports Supabase-backed persistence.
 
-- Local development: reads and writes `data/aura-store.json`
-- Vercel deployment: uses in-memory fallback storage
+- If Supabase environment variables are present, sessions and journal entries are stored in Supabase.
+- If Supabase is not configured:
+  local development falls back to `data/aura-store.json`
+- If Supabase is not configured on Vercel:
+  runtime falls back to in-memory storage
 
-That means production AI chat works on Vercel, but conversation history and journal data are not guaranteed to persist across instance restarts or redeploys.
+Use [supabase-schema.sql](C:\Users\zyuan\OneDrive\Documents\New%20project\aura-web\supabase-schema.sql) in the Supabase SQL editor before deploying the database-backed version.
 
 ## Current API Routes
 
@@ -84,8 +91,4 @@ That means production AI chat works on Vercel, but conversation history and jour
 
 ## Recommended Next Step
 
-If you want durable production storage, replace the current fallback with a real external store such as:
-
-- Vercel Postgres
-- Supabase
-- Prisma + PostgreSQL
+If you want to go further, the next step is adding auth and row-level policies on top of the current Supabase tables.
