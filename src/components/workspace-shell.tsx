@@ -64,7 +64,7 @@ export function WorkspaceShell({
             className={styles.closeButton}
             onClick={() => setSceneClosed((current) => !current)}
           >
-            {sceneClosed ? "Show 3D" : "Hide 3D"}
+            {sceneClosed ? "Show Card" : "Hide Card"}
           </button>
         </div>
       </header>

@@ -94,7 +94,7 @@ export function SandboxPage() {
         <div className={styles.moduleHeader}>
           <div>
             <p className={styles.sectionLabel}>AURA</p>
-            <h3>Fluid Sandbox</h3>
+            <h3>SANDBOX</h3>
           </div>
           <button className={styles.closeButton} type="button" onClick={() => router.push("/")}>
             Close

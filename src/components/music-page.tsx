@@ -139,7 +139,7 @@ export function MusicPage() {
 
   return (
     <WorkspaceShell
-      title="Music Space"
+      title="Meditation Space"
       subtitle="Slow the body down first, then return to the uncertainty with more room."
       status={activeMode ? `Playing ${activeMode}` : "Ready"}
       frameless
