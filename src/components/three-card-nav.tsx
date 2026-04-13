@@ -261,6 +261,17 @@ export function ThreeCardNav() {
     const animate = () => {
       animationFrame = window.requestAnimationFrame(animate);
       const elapsed = clock.getElapsedTime();
+      const compact = canvas.clientWidth <= 760;
+      const xSpacing = compact ? 1.48 : 2.28;
+      const innerSpacing = compact ? 1.36 : 1.94;
+      const homeScaleBase = compact ? 0.72 : 0.86;
+      const homeScaleBoost = compact ? 0.14 : 0.18;
+      const selectedScale = compact ? 0.94 : 1.05;
+      const idleScale = compact ? 0.84 : 0.92;
+      const hoverScaleBoost = compact ? 0.04 : 0.08;
+      const hoverLiftAmount = compact ? 0.12 : 0.22;
+      const hoverForwardAmount = compact ? 0.22 : 0.45;
+      const homeYOffset = compact ? -0.22 : 0;
 
       raycaster.setFromCamera(pointer, camera);
       const hits = raycaster.intersectObjects(cards.map((entry) => entry.plate));
@@ -278,13 +289,17 @@ export function ThreeCardNav() {
         const selected = isHome ? false : index === activeIndex;
         const distance = Math.abs(offset);
         const prominence = isHome ? Math.max(0, 1 - distance / 2.2) : selected ? 1 : Math.max(0, 1 - distance / 2.8);
-        const targetX = isHome ? offset * 2.28 : offset * 1.94;
-        const targetY = isHome ? prominence * 0.04 - distance * 0.03 : selected ? 0.08 : distance * -0.05;
+        const targetX = isHome ? offset * xSpacing : offset * innerSpacing;
+        const targetY = isHome
+          ? homeYOffset + prominence * 0.04 - distance * (compact ? 0.018 : 0.03)
+          : selected
+            ? 0.08
+            : distance * -0.05;
         const targetZ = isHome ? prominence * 0.9 - distance * 0.18 : selected ? 0.84 : -0.42 - distance * 0.62;
         const targetRotY = isHome ? -offset * 0.24 : -offset * 0.32;
-        const targetRotX = isHome ? 0.03 + distance * 0.015 : selected ? -0.03 : 0.08;
-        const hoverLift = hovered ? 0.22 : 0;
-        const hoverForward = hovered ? 0.45 : 0;
+        const targetRotX = isHome ? (compact ? 0.015 : 0.03) + distance * 0.015 : selected ? -0.03 : 0.08;
+        const hoverLift = hovered ? hoverLiftAmount : 0;
+        const hoverForward = hovered ? hoverForwardAmount : 0;
 
         entry.group.position.x = THREE.MathUtils.lerp(entry.group.position.x, targetX, 0.11);
         entry.group.position.y = THREE.MathUtils.lerp(
@@ -300,8 +315,12 @@ export function ThreeCardNav() {
         );
         entry.group.rotation.x = THREE.MathUtils.lerp(entry.group.rotation.x, targetRotX, 0.1);
 
-        const targetScale = isHome ? 0.86 + prominence * 0.18 : selected ? 1.05 : 0.92;
-        const hoverScale = hovered ? 0.08 : 0;
+        const targetScale = isHome
+          ? homeScaleBase + prominence * homeScaleBoost
+          : selected
+            ? selectedScale
+            : idleScale;
+        const hoverScale = hovered ? hoverScaleBoost : 0;
         const scale = THREE.MathUtils.lerp(entry.group.scale.x, targetScale + hoverScale, 0.1);
         entry.group.scale.setScalar(scale);
       });
