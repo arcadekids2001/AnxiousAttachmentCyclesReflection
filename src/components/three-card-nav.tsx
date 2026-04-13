@@ -36,8 +36,8 @@ const navCards: NavCard[] = [
   },
   {
     href: "/sandbox",
-    title: "Fluid\nSandbox",
-    description: "CALM SPACE",
+    title: "Sandbox\nTherapy",
+    description: "PLAY",
     colorA: "#17212f",
     colorB: "#25384c",
     accentA: "rgba(138, 221, 255, 0.1)",
@@ -45,8 +45,8 @@ const navCards: NavCard[] = [
   },
   {
     href: "/music",
-    title: "Music\nSpace",
-    description: "RESET",
+    title: "Meditation\nSpace",
+    description: "CALM",
     colorA: "#15252d",
     colorB: "#214150",
     accentA: "rgba(128, 244, 216, 0.1)",
